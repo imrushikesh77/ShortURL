@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortID</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+        div{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        form , input, label, button{   
+            margin: 10px;
+        }
+
+        input{
+            background-color: rgb(0, 255, 225);
+            border: 1px solid black;
+            padding: 3px 6px;
+            border-radius: 5px;
+            outline: none;
+        }
+        button{
+            background-color: rgb(0, 255, 119);
+            border: 1px solid black;
+            padding: 3px 6px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>ShortID</h1>
+        <% if(locals.id) {%>
+            <p>URL Generated: <a href="http://localhost:8080/url/<%=id%>" target=”_blank”>http://imrushikesh77/<%=id%></a></p>
+            <% } %>
+        <form method="post" action="/url">
+            <label for="">Enter Your URL</label>
+            <br>
+            <input type="text" name="url" placeholder="https://example.com">
+            <br>
+            <button type="submit">Generate</button>
+        </form>
+</body>
+</html>
